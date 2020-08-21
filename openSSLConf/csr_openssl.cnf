@@ -35,7 +35,8 @@ nsCertType          = server
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 nsComment           = "OpenSSL Generated Certificate"
 subjectKeyIdentifier=hash
-extendedKeyUsage = serverAuth
+#extendedKeyUsage = serverAuth
+extendedKeyUsage = serverAuth, clientAuth
 subjectAltName = @san_names
 
 [ client ]
