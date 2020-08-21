@@ -196,9 +196,6 @@ function main() {
   createPKISetup
   createSelfSignedCACert
   generateCSRAndCertsFor "${serviceName}" "${opensslTmplConfDir}/${sanFileToUse}" "${serviceType}" "${CN_name}" "${certEmail}"
-
-  # uncomment following to create client cert for Kibana (or some other service)
-  # generateCSRAndCertsFor "kibana" "${opensslTmplConfDir}/client_san.cnf" "client" "kibana.example.com" "client@example.com"
   cleanup
 }
 
