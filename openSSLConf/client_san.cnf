@@ -1,0 +1,4 @@
+[ san_names ]
+DNS.1 = *.clientdomain.com
+IP.1 = 127.0.0.1 
+DNS.2 = localhost 

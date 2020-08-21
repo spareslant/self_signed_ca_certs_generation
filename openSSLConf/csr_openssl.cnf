@@ -1,0 +1,48 @@
+[ req ]
+default_bits        = 2048
+default_md      = sha256
+default_keyfile     = privkey.pem
+distinguished_name  = req_distinguished_name
+attributes              = req_attributes
+string_mask = utf8only
+
+[ req_distinguished_name ]
+countryName         = Country Name (2 letter code)
+countryName_default     = XX
+countryName_min         = 2
+countryName_max         = 2
+stateOrProvinceName     = State or Province Name (full name)
+localityName            = Locality Name (eg, city)
+localityName_default        = Default City
+0.organizationName      = Organization Name (eg, company)
+0.organizationName_default  = Default Company Ltd
+organizationalUnitName      = Organizational Unit Name (eg, section)
+#organizationalUnitName_default =
+commonName          = Common Name (eg, your name or your server\'s hostname)
+commonName_max          = 64
+emailAddress            = Email Address
+emailAddress_max        = 64
+
+[ req_attributes ]
+challengePassword               = A challenge password
+challengePassword_min           = 4
+challengePassword_max           = 20
+unstructuredName                = An optional company name
+
+[ server ]
+basicConstraints=CA:FALSE
+nsCertType          = server
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+nsComment           = "OpenSSL Generated Certificate"
+subjectKeyIdentifier=hash
+extendedKeyUsage = serverAuth
+subjectAltName = @san_names
+
+[ client ]
+basicConstraints=CA:FALSE
+nsCertType          = client, email
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+nsComment           = "OpenSSL Generated Certificate"
+subjectKeyIdentifier=hash
+extendedKeyUsage = clientAuth
+subjectAltName = @san_names
